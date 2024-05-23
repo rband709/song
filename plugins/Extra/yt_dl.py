@@ -24,7 +24,7 @@ async def song(client, message):
         query += ' ' + str(i)
     print(query)
     m = await message.reply(f"**🔎 در حال جست و جو ...\n {query}**")
-    ydl_opts = {"format": "bestaudio[ext=mp3]"}
+    ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
         link = f"https://youtube.com{results[0]['url_suffix']}"
