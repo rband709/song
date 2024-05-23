@@ -137,9 +137,11 @@ Gʀᴏᴜᴘ = {}(<code>{}</code>)
 Tᴏᴛᴀʟ Mᴇᴍʙᴇʀs = <code>{}</code>
 Aᴅᴅᴇᴅ Bʏ - {}"""
 
-    LOG_TEXT_P = """#NewUser
-ID - <code>{}</code>
-Nᴀᴍᴇ - {}"""
+    LOG_TEXT_P = """<b><u>✅ کاربر جدیدی به ربات پیوست 😍 </u>
+🔺 نام کاربر  : {}
+🔺 آیدی عددی کاربر : <code>{}</code>
+🤖 آیدی ربات : @IR_YoutubeDLbot</b>"""
+
 
     ALRT_TXT = """ʜᴇʟʟᴏ {},
 ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,
@@ -416,13 +418,12 @@ Aᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:
 
  
     RESTART_TXT = """
-<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
-
-📅 Dᴀᴛᴇ : <code>{}</code>
-⏰ Tɪᴍᴇ : <code>{}</code>
-🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>Asia/Kolkata</code>
-🛠️ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: <code>v2.7.1 [ Sᴛᴀʙʟᴇ ]</code></b>"""
-
+<b>ربات با موفقیت ران شد. 😍
+📅 تاریخ : <code>{}</code>
+⏰ زمان : <code>{}</code>
+🌐 منطقه زمانی : <code>Asia/Kolkata</code>
+🛠️ ورژن کد : <code>v2.7.1 [ Sᴛᴀʙʟᴇ ]</code></b>
+🤖 ربات : @IR_YouTubeDLBot</b>"""
     LOGO = """
 
 BOT WORKING PROPERLY"""
