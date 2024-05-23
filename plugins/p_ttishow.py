@@ -42,10 +42,7 @@ async def save_group(bot, message):
             await bot.leave_chat(message.chat.id)
             return
         buttons = [[
-                    InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-                    InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                 ],[
-                    InlineKeyboardButton("کانال پشتیبانی", url="t.me/ir_botz")
+                  InlineKeyboardButton("کانال پشتیبانی", url="t.me/ir_botz")
                   ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_text(
@@ -65,17 +62,14 @@ async def save_group(bot, message):
                                                  caption=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
                                                  reply_markup=InlineKeyboardMarkup(
                                                                          [[
-                                                                           InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-                                                                           InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                                                                        ],[
-                                                                           InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/farshidband")
+                                                                          InlineKeyboardButton("کانال پشتیبانی", url="t.me/ir_botz")
                                                                          ]]
                                                  ),
                                                  parse_mode=enums.ParseMode.HTML
                 )
                 
         if settings["auto_delete"]:
-            await asyncio.sleep(600)
+            await asyncio.sleep(3)
             await (temp.MELCOW['welcome']).delete()
                 
                
