@@ -16,7 +16,6 @@ from yt_dlp import YoutubeDL
 
 @Client.on_message(filters.command(['song', 'mp3']) filters.private)
 async def song(client, message):
-    chat_id = message.chat.id 
     user_id = message.from_user.id 
     user_name = message.from_user.first_name 
     rpk = "["+user_name+"](tg://user?id="+str(user_id)+")"
@@ -25,7 +24,7 @@ async def song(client, message):
         query += ' ' + str(i)
     print(query)
     m = await message.reply(f"**🔎 در حال جست و جو ...\n {query}**")
-    ydl_opts = {"format": "bestaudio[ext=m4a]"}
+    ydl_opts = {"format": "bestaudio[ext=mp3]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
         link = f"https://youtube.com{results[0]['url_suffix']}"
@@ -49,7 +48,7 @@ async def song(client, message):
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
 
-        cap = "**<u>🎧 دانلود شده با [IR-BOTZ™](https://t.me/ir_botz) </u>**"
+        cap = "**<u>🎧 دانلود شده با [IR-BOTZ™](https://t.me/ir_AhangDLBot) </u>**"
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -65,7 +64,7 @@ async def song(client, message):
         )            
         await m.delete()
     except Exception as e:
-        await m.edit("**🚫 𝙴𝚁𝚁𝙾𝚁 🚫**")
+        await m.edit("**🚫 خطا ، دوباره امتحان کنید 🚫**")
         print(e)
     try:
         os.remove(audio_file)
