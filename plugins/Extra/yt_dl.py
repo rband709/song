@@ -14,7 +14,7 @@ from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
 
 
-@Client.on_message(filters.command(['song', 'mp3']))
+@Client.on_message(filters.command(['song', 'mp3']) & filters.group)
 async def song(client, message):
     chat_id = message.form_chat.id 
     user_id = message.from_user.id 
