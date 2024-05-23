@@ -45,11 +45,11 @@ async def save_group(bot, message):
                     InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
                     InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
                  ],[
-                    InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/KingVJ01")
+                    InlineKeyboardButton("کانال پشتیبانی", url="t.me/ir_botz")
                   ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_text(
-            text=f"<b>Thankyou For Adding Me In {message.chat.title} ❣️\n\nIf you have any questions & doubts about using me contact support.</b>",
+            text=f"<b>✅ربات باموفقیت در گروه ارتقا یافت.😍\n\n♨️ نام گروه : {message.chat.title} </b>",
             reply_markup=reply_markup)
     else:
         settings = await get_settings(message.chat.id)
@@ -80,7 +80,7 @@ async def save_group(bot, message):
                 
                
 
-
+"""
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
@@ -164,7 +164,7 @@ async def re_enable_chat(bot, message):
     await db.re_enable_chat(int(chat_))
     temp.BANNED_CHATS.remove(int(chat_))
     await message.reply("Chat Successfully re-enabled")
-
+"""
 
 @Client.on_message(filters.command('stats') & filters.incoming)
 async def get_ststs(bot, message):
@@ -178,7 +178,7 @@ async def get_ststs(bot, message):
     free = get_size(free)
     await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
 
-
+"""
 @Client.on_message(filters.command('invite') & filters.user(ADMINS))
 async def gen_invite(bot, message):
     if len(message.command) == 1:
@@ -195,7 +195,7 @@ async def gen_invite(bot, message):
     except Exception as e:
         return await message.reply(f'Error {e}')
     await message.reply(f'Here is your Invite Link {link.invite_link}')
-
+"""
 @Client.on_message(filters.command('ban') & filters.user(ADMINS))
 async def ban_a_user(bot, message):
     # https://t.me/GetTGLink/4185
