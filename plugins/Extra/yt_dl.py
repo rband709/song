@@ -14,7 +14,7 @@ from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
 
 
-@Client.on_message(filters.command(['song', 'mp3']))
+@Client.on_message(filters.command(['song', 'mp3']) filters.private)
 async def song(client, message):
     chat_id = message.chat.id 
     user_id = message.from_user.id 
@@ -84,50 +84,7 @@ def get_text(message: Message) -> [None,str]:
     except IndexError:
         return None
 #---------------------------------------------------------
-@Client.on_message(filters.command(["ahang", "m64"]))
-async def ahang(client, message: Message):
-    urlissed = get_text(message)
-    pablo = await client.send_message(message.chat.id, f"**𝙵𝙸𝙽𝙳𝙸𝙽g** `{urlissed}`")
-    if not urlissed:
-        return await pablo.edit("Example: /ahang your name music")
-        ydl_opts = {"format": "bestaudio[ext=m4a]"}
-    try:
-        results = YoutubeSearch(query, max_results=1).to_dict()
-        link = f"https://youtube.com{results[0]['url_suffix']}"
-        title = results[0]["title"][:40]       
-        thumbnail = results[0]["thumbnails"][0]
-        thumb_name = f'thumb{title}.jpg'
-        thumb = requests.get(thumbnail, allow_redirects=True)
-        open(thumb_name, 'wb').write(thumb.content)
-        performer = f"[IR_BOTZ™]" 
-        duration = results[0]["duration"]
-        url_suffix = results[0]["url_suffix"]
-        views = results[0]["views"]
-        except Exception as e:
-        print(str(e))
-         await m.edit("ابتدا دستور /song را نوشته سپس نام آهنگ\nبدین صورت ↙️\n➡️ /song آرون افشار شب رویایی ")
-                
-    await m.edit("**📀 در حال آپلود ...😊**")
-    try:
-        with YoutubeDL(ydl_opts) as ydl:
-            info_dict = ydl.extract_info(link, download=False)
-            audio_file = ydl.prepare_filename(info_dict)
-            ydl.process_info(info_dict)
 
-        cap = "**<u>🎧 دانلود شده با [IR-BOTZ™](https://t.me/ir_botz) </u>**"
-        secmul, dur, dur_arr = 1, 0, duration.split(':')
-        for i in range(len(dur_arr)-1, -1, -1):
-            dur += (int(dur_arr[i]) * secmul)
-            secmul *= 60
-        await message.reply_audio(
-            audio_file,
-            caption=cap,            
-            quote=False,
-            title=title,
-            duration=dur,
-            performer=performer,
-            thumb=thumb_name
-        )    
 #---------------------------------------------------------
 
 @Client.on_message(filters.command(["vidddeo", "m67p4"]))
