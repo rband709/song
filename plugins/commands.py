@@ -58,7 +58,7 @@ async def start(client, message):
             parse_mode=enums.ParseMode.HTML
         )
         return
-    
+    """
     if AUTH_CHANNEL and not await is_subscribed(client, message):
         try:
             invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
@@ -502,7 +502,7 @@ async def channel_info(bot, message):
         await message.reply_document(file)
         os.remove(file)
 
-"""
+
 @Client.on_message(filters.command('logs') & filters.user(ADMINS))
 async def log_file(bot, message):
     """Send log file"""
@@ -762,10 +762,10 @@ async def settings(client, message):
                 disable_web_page_preview=True,
                 parse_mode=enums.ParseMode.HTML,
                 reply_to_message_id=message.id
-            )
+            ) 
+"""
 
-
-
+"""
 @Client.on_message(filters.command('set_template'))
 async def save_template(client, message):
     sts = await message.reply("Checking template")
