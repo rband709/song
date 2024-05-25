@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 import os, requests, asyncio, math, time, wget
-from pyrogram import filters, Client as Dxbotz 
+from pyrogram import filters, client as Client 
 from pyrogram.types import Message
 import bs4, requests
 from config import Config
