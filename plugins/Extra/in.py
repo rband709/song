@@ -12,7 +12,7 @@ from config import Config
 #from config import Config
 
 @Client.on_message(filters.regex(r'https?://.*instagram[^\s]+') & filters.incoming, group=1)
-async def link_handler(Dxbotz, message):
+async def link_handler(Client, message):
     link = message.matches[0].group(0)
     try:
         m = await message.reply_text("⏳")
@@ -41,8 +41,8 @@ async def link_handler(Dxbotz, message):
                  dump_file=await message.reply_photo(f"https://ddinstagram.com{content_value}")
         except Exception as e:
             await message.reply_text(f"https://ddinstagram.com{content_value}")
-            if Config.LOG_GROUP:
-               await Dxbotz.send_message(Config.LOG_GROUP,f"Instagram {e} {content_value}")
+            if Config.LOG_CHANNEL:
+               await Dxbotz.send_message(Config.LOG_CHANNEL,f"Instagram {e} {content_value}")
             ##optinal 
             await message.reply(f"400: Sorry, Unable To Find It  try another or report it  to @dxziyan")
 
