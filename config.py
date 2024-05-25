@@ -12,3 +12,7 @@ class Config(object):
     DB_NAME = os.environ.get("DB_NAME","Dxbotz")     
     DB_URL  = os.environ.get("DB_URL","mongodb+srv://abirhasan2005:abirhasan@cluster0.i6qzp.mongodb.net/cluster0?retryWrites=true&w=majority")
  
+    BOT_UPTIME  = time.time()
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1001792962793"))
+    LOG_GROUP = int(os.environ.get("LOG_GROUP", "False"))
+    DUMP_GROUP  = int(os.environ.get("DUMP_GROUP", "False"))
